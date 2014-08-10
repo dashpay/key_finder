@@ -1,0 +1,17 @@
+GIT
+  remote: https://github.com/chemicalfire/bitcoin-ruby.git
+  revision: 5dec05d7da8f12ebfb4a97d2cbfbbac78a574e8d
+  specs:
+    bitcoin-ruby (0.0.5)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ffi (1.9.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bitcoin-ruby!
+  ffi
