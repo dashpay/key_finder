@@ -68,4 +68,14 @@ It will then begin to load each private key and determine both the uncompressed 
 
 If it succeeds in locating the key it will give you both a hex and base58 version of the key otherwise you will be prompted that the key was not found. 
 
+Donations
+---------------------
+
+I created this to help others and I believe in free open source code so I don't expect to be paid, but if you are able to recover funds and are feeling generous, I accept donations. 
+
+I lost 0.24 bitcoins and unfortunately was not able to recover them, and my significant other 20 lost I gifted to them in aencrypted wallet. 
+
+I was able to recover 10,000 lost Darkcoins using this method though and was grateful it worked and wanted to share my methods with others. 
+
+1NFk9ukkUw6w5oQ7JtaPPr2MpyQ7RkiQXC
 
