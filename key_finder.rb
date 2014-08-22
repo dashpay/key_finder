@@ -1,8 +1,8 @@
 require "bitcoin"
 
-DIR = "output"
-PUBKEY = "1NB6BCRctsjneowskMQM7Djx5GAkC9yBmy"
-COIN = "bitcoin" # Only Darkcoin and Bitcoin supported, but it is easy to add others 
+DIR = "scalpel-output"
+PUBKEY = "XiJaZKARUACMn69kWTbJ2XYZGh73ifwcFQ"
+COIN = "darkcoin" # Only Darkcoin and Bitcoin supported, but it is easy to add others 
 
 
 if COIN == "bitcoin"
@@ -21,15 +21,18 @@ Dir.foreach(DIR) do |folder|
   if folder.include?("key")
     Dir.foreach(DIR + '/' + folder) do |key|
       if key.include?(".key")
-        File.open(DIR + '/' + folder + '/' + key.to_s, 'r').each do |line|
-          hex = line.unpack('H256').first.upcase
-          # Delete prefix
-          hex.gsub!(@prefix, "")
-          # Delete suffix
-          hex.gsub!(@suffix, "")
-          if hex.size == 64
-            @keys << hex
-          end
+
+        file = File.open(DIR + '/' + folder + '/' + key.to_s, 'r')
+        data = file.read
+        hex = data.unpack('H*').first.upcase
+        file.close()
+
+        # Delete prefix
+        hex.gsub!(@prefix, "")
+        # Delete suffix
+        hex.gsub!(@suffix, "")
+        if hex.size == 64
+          @keys << hex
         end
       end
     end
